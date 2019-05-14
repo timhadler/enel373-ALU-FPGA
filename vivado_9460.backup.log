@@ -1,0 +1,76 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Thu Apr 11 14:01:19 2019
+# Process ID: 9460
+# Current directory: D:/ENEL373/Project/mine
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10620 D:\ENEL373\Project\mine\main_project.xpr
+# Log file: D:/ENEL373/Project/mine/vivado.log
+# Journal file: D:/ENEL373/Project/mine\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/ENEL373/Project/mine/main_project.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2016.2/data/ip'.
+open_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 766.117 ; gain = 91.863
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Apr 11 14:01:42 2019] Launched synth_1...
+Run output will be captured here: D:/ENEL373/Project/mine/main_project.runs/synth_1/runme.log
+[Thu Apr 11 14:01:42 2019] Launched impl_1...
+Run output will be captured here: D:/ENEL373/Project/mine/main_project.runs/impl_1/runme.log
+reset_run impl_1 -noclean_dir 
+WARNING: [Vivado 12-1017] Problems encountered:
+1. PID not specified
+
+launch_runs impl_1
+[Thu Apr 11 14:05:14 2019] Launched impl_1...
+Run output will be captured here: D:/ENEL373/Project/mine/main_project.runs/impl_1/runme.log
+remove_files D:/ENEL373/Project/mine/main_project.srcs/sources_1/new/st_mcn.vhd
+file delete -force D:/ENEL373/Project/mine/main_project.srcs/sources_1/new/st_mcn.vhd
+reset_run impl_1 -prev_step 
+WARNING: [Vivado 12-1017] Problems encountered:
+1. PID not specified
+
+launch_runs impl_1
+[Thu Apr 11 14:07:55 2019] Launched impl_1...
+Run output will be captured here: D:/ENEL373/Project/mine/main_project.runs/impl_1/runme.log
+reset_simulation -simset sim_1 -mode behavioral
+reset_run impl_1 -prev_step 
+WARNING: [Vivado 12-1017] Problems encountered:
+1. PID not specified
+
+reset_simulation -simset sim_1 -mode post-synthesis -type functional
+reset_simulation -simset sim_1 -mode post-synthesis -type timing
+set_property is_enabled false [get_files  D:/ENEL373/Project/mine/main_project.srcs/sources_1/new/main_project.vhd]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+undo
+INFO: [Common 17-17] undo 'set_property is_enabled false [get_files  D:/ENEL373/Project/mine/main_project.srcs/sources_1/new/main_project.vhd]'
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+set_property used_in_simulation false [get_files  D:/ENEL373/Project/mine/main_project.srcs/sources_1/new/main_project.vhd]
+update_compile_order -fileset sim_1
+set_property used_in_simulation false [get_files  {D:/ENEL373/Project/mine/main_project.srcs/sources_1/new/hex_display.vhd D:/ENEL373/Project/mine/main_project.srcs/sources_1/new/ALU.vhd D:/ENEL373/Project/mine/main_project.srcs/sources_1/imports/Downloads/BCD_to_7SEG.vhd D:/ENEL373/Project/mine/main_project.srcs/sources_1/new/control_unit.vhd D:/ENEL373/Project/mine/main_project.srcs/sources_1/new/led_mux.vhd D:/ENEL373/Project/mine/main_project.srcs/sources_1/new/load_data.vhd P:/Downloads/my_divider.vhd D:/ENEL373/Project/mine/main_project.srcs/sources_1/new/reg_4_en.vhd D:/ENEL373/Project/mine/main_project.srcs/sources_1/new/reg_8.vhd D:/ENEL373/Project/mine/main_project.srcs/sources_1/new/tristate_8_buf.vhd}]
+update_compile_order -fileset sim_1
+set_property used_in_simulation false [get_files  D:/ENEL373/Project/mine/main_project.srcs/sources_1/new/hex_to_7seg.vhd]
+update_compile_order -fileset sim_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+[Thu Apr 11 14:12:27 2019] Launched synth_1...
+Run output will be captured here: D:/ENEL373/Project/mine/main_project.runs/synth_1/runme.log
+[Thu Apr 11 14:12:27 2019] Launched impl_1...
+Run output will be captured here: D:/ENEL373/Project/mine/main_project.runs/impl_1/runme.log
+reset_run impl_1 -prev_step 
+WARNING: [Vivado 12-1017] Problems encountered:
+1. PID not specified
+
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 11 14:17:59 2019...

@@ -35,14 +35,15 @@ entity main is
 port(
     CLK100MHZ, BTNC : in std_logic;
     SW : in std_logic_vector (7 downto 0);
-    C : out std_logic_vector (0 to 6);
+    seg : out std_logic_vector (0 to 6);
+    AN : out std_logic_vector (7 downto 0);
     LED : out std_logic_vector (15 downto 0)
 );
 end main;
 
 architecture Behav of main is
 
-signal clk_1hz, clk_100hz : std_logic;
+signal clk_5hz, clk_100hz, concurr_clk : std_logic;
 signal databus : std_logic_vector (7 downto 0);
 signal regA, regB, regG, operand : std_logic_vector (7 downto 0);
 signal bcd : std_logic_vector (7 downto 0);
@@ -50,7 +51,7 @@ signal curr_state : std_logic_vector (2 downto 0);
 signal ALU_Out : std_logic_vector (7 downto 0);
 
 signal R0_EN, R1_EN, Operator_EN, Operand_EN, RG_EN, SW_EN : STD_LOGIC;
-signal R0_out, R1_out, RG_out, clr_all : STD_LOGIC;
+signal R0_out, R1_out, RG_out, clr_all, Button : STD_LOGIC;
 signal operator : std_logic_vector (3 downto 0);
 
 component BCD_to_7SEG port(
@@ -91,9 +92,21 @@ component ALU port(
     G : out STD_LOGIC_VECTOR (7 downto 0));
 end component;
 
+component Button_Debounce port(
+    Clk, Button : in std_logic;
+    butt_signal : out std_logic );
+end component;
+
 component my_divider Port( 
     Clk_in : in  STD_LOGIC;
-    Clk_out_1, Clk_out_2 : out  STD_LOGIC );
+    Clk_out_1, Clk_out_2, Clk_out_3 : out  STD_LOGIC );
+end component;
+
+component hex_8bit_display port(
+    input : in STD_LOGIC_VECTOR (7 downto 0);
+    concurr_clk : in std_logic;
+    BCD_7seg : out std_logic_vector (6 downto 0);
+    digit_7seg : out std_logic_vector (7 downto 0));
 end component;
 
 component led_mux port(
@@ -105,10 +118,16 @@ end component;
 
 begin
 
+Debounce : Button_Debounce port map(
+    Clk => clk_5hz ,Button => BTNC, butt_signal => Button
+    );
 
+Display : hex_8bit_display port map(
+    input => regG, concurr_clk => concurr_clk, BCD_7seg => seg, digit_7seg => AN
+    );
 
 Clock_Divider : my_divider port map(
-    clk_in => clk100mhz, clk_out_1 => clk_1hz, clk_out_2 => clk_100hz
+    clk_in => clk100mhz, clk_out_1 => clk_5hz, clk_out_2 => clk_100hz, Clk_out_3 => concurr_clk
     );
     
 A_Register : reg_8_en port map (
@@ -127,7 +146,7 @@ Operator_Register : reg_4_en port map (
     D => databus(3 downto 0), clk => clk_100hz, clr => clr_all, en => Operator_EN, Q => operator
     );
     
-Operand_Register : reg_8_en port map (
+OperandA_Register : reg_8_en port map (
     D => databus, clk => clk_100hz, clr => clr_all, en => Operand_EN, Q => operand
     );
         
@@ -152,7 +171,7 @@ LEDMux : led_mux port map(
     );
     
 Control : control_unit port map (
-    clk => clk_1hz, exe => BTNC, R0_EN => R0_EN, R1_EN => R1_EN, Operator_EN => Operator_EN, Operand_EN => Operand_EN, 
+    clk => clk_100hz, exe => Button, R0_EN => R0_EN, R1_EN => R1_EN, Operator_EN => Operator_EN, Operand_EN => Operand_EN, 
     RG_EN => RG_EN, R0_out => r0_out, R1_out => R1_out, RG_out => RG_out, SW_EN => SW_EN, state => curr_state, clr_all => clr_all
     );
     
