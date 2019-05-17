@@ -36,7 +36,7 @@
         <Attr Name="UsedIn" Val="synthesis"/>
       </FileInfo>
     </File>
-    <File Path="P:/Downloads/my_divider.vhd">
+    <File Path="$PPRDIR/../../../../../../Downloads/my_divider.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
       </FileInfo>
@@ -75,7 +75,7 @@
     <File Path="$PSRCDIR/sources_1/imports/Downloads/BCD_to_7SEG.vhd">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="P:/Downloads/BCD_to_7SEG.vhd"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../Downloads/BCD_to_7SEG.vhd"/>
         <Attr Name="ImportTime" Val="1551911106"/>
         <Attr Name="UsedIn" Val="synthesis"/>
       </FileInfo>

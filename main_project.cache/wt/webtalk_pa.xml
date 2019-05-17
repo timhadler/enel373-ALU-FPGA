@@ -3,7 +3,7 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Mon May 13 14:32:39 2019">
+<application name="pa" timeStamp="Fri May 17 14:10:45 2019">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="cfc6847c74fa4876bf5630d902c9398a" type="ProjectID"/>
 <property name="ProjectIteration" value="128" type="ProjectIteration"/>
@@ -46,6 +46,16 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ZoomFit" value="14" type="JavaHandler"/>
 <property name="ZoomIn" value="26" type="JavaHandler"/>
 <property name="ZoomOut" value="5" type="JavaHandler"/>
+</item>
+<item name="Gui Resources Info">
+<property name="PAResourceAtoD.CmdMsgDialog_MESSAGES, [Project 1-19] Could not find the file 'P:/My Documents/Work/Second Pro/ENEL373/Nexys4DDR_Master.xdc'., 0" value="4" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CmdMsgDialog_MESSAGES, [Project 1-19] Could not find the file 'P:/My Documents/Work/Second Pro/ENEL373/Nexys4DDR_Master.xdc'., 0, false, false, false, false, true" value="1" type="GuiResourceData"/>
+<property name="PAResourceAtoD.CmdMsgDialog_OK, OK" value="1" type="GuiResourceData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="30" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="23" type="TclMode"/>
 </item>
 </section>
 </application>
