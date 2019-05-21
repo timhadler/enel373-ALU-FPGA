@@ -63,7 +63,11 @@ begin
             Button <= '0';
             wait for 10 ns;
             Button <= '1';
-            wait for 80 ns;
+            wait for 5 ns;
+            Button <= '0';
+            wait for 5 ns;
+            Button <= '1';
+            wait for 70 ns;
             Clk <= '1';
             Button <= '0';
             wait;
