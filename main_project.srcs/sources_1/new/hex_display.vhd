@@ -10,7 +10,7 @@
 -- Description: Is the display module that display a two digit hex number 
 -- on the 7-seg display
 -- Uses a hex_to_7seg module to convert a 8 bit binary number to
--- two a two digit hex number
+-- two a two digit hex number for the 7-seg display
 -- Uses time division multiplexing to display the hex result
 -- 
 ----------------------------------------------------------------------------------
