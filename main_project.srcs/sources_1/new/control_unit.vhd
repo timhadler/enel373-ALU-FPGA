@@ -1,20 +1,15 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Author: Tim Hadler
 -- 
--- Create Date: 09.04.2019 13:38:21
--- Design Name: 
--- Module Name: control_unit - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
 -- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
+-- Create Date: 10.04.2019 11:09:58
+-- Module Name: Control_unit
+-- Project Name: ALU Design Project
+-- Target Devices: Nexys 4 DDR
+-- Tool Versions: Xilinx Vivado
+-- Description: Is the control unit for the project ALU
+-- Decides when the output signals to control the ALU
+-- is HIGH or LOW, based on the current state ofthe ALU. 
 -- 
 ----------------------------------------------------------------------------------
 
@@ -22,18 +17,10 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity control_unit is
     Port ( clk : in STD_LOGIC;
-           exe : in STD_LOGIC;
+           exe : in STD_LOGIC; -- Input button BTNC
            R0_EN, R1_EN, Operand_EN, Operator_EN, RG_EN, SW_EN : out STD_LOGIC;
            R0_out, R1_out, RG_out, clr_all : out STD_LOGIC;
            state : out std_logic_vector (2 downto 0) );
