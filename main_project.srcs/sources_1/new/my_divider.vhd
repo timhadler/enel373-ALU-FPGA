@@ -1,21 +1,17 @@
 ----------------------------------------------------------------------------------
--- Company:  UC, ECE
--- Lecturer: Steve Weddell
+-- Author: Tim Hadler
 -- 
--- Create Date:    23:24:33 02/07/2011 
--- Design Name: 
--- Module Name:    my_divider - Behavioral 
--- Project Name:    For ENEL353 course on digital logic
--- Target Devices: Any
--- Tool versions:  Any
--- Description:   This clock divider will take a 50MHz clock and divide it down to 1Hz
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
+-- 
+-- Create Date: 10.04.2019 11:09:58
+-- Module Name: my_dicider - Behavioral
+-- Project Name: ALU Design Project
+-- Target Devices: Nexys 4 DDR
+-- Tool Versions: Xilinx Vivado
+-- Description: This module was taken from Steve Weddels my_divider module
+-- and modified to output 3 clock signals at different frequencies
+-- Takes 100MHz clock and outputs 5, 50, and 100 Hz clock signals
+-- 
+-- 
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -23,22 +19,11 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity my_divider is
     Port ( Clk_in : in  STD_LOGIC;
            Clk_out_1, Clk_out_2, Clk_out_3 : out  STD_LOGIC);
-              
-    --attribute LOC: string;          
-    --attribute LOC of Clk_in: signal is "C9"; -- "B8"; -- MCLK
-    --attribute LOC of Clk_out_1: signal is "D4";   --"M5"; -- LED0     
+   
 end my_divider;
 
 architecture Behavioral of my_divider is
@@ -63,25 +48,25 @@ begin
         begin
         if Clk_in = '1' and Clk_in'Event then
         
-          if clk_ctr_1 = clk_limit_1 then               -- if counter == (1Hz count)/2
-             temp_clk_1 <= not temp_clk_1;              --  toggle clock
-             clk_ctr_1 <= X"0000000";                   --  reset counter
-          else                                          -- else
-             clk_ctr_1 <= clk_ctr_1 + X"0000001";   --  counter = counter + 1
+          if clk_ctr_1 = clk_limit_1 then               
+             temp_clk_1 <= not temp_clk_1;              --toggles clock
+             clk_ctr_1 <= X"0000000";                   -- clr counter
+          else                                          
+             clk_ctr_1 <= clk_ctr_1 + X"0000001";  
           end if;
           
-          if clk_ctr_2 = clk_limit_2 then               -- if counter == (1Hz count)/2
-               temp_clk_2 <= not temp_clk_2;                --  toggle clock
-             clk_ctr_2 <= X"0000000";                    --  reset counter
-          else                                            -- else
-               clk_ctr_2 <= clk_ctr_2 + X"0000001";    --  counter = counter + 1
+          if clk_ctr_2 = clk_limit_2 then               
+               temp_clk_2 <= not temp_clk_2;            
+             clk_ctr_2 <= X"0000000";                   
+          else                                          
+               clk_ctr_2 <= clk_ctr_2 + X"0000001";    
           end if;
           
-          if clk_ctr_3 = clk_limit_3 then               -- if counter == (1Hz count)/2
-               temp_clk_3 <= not temp_clk_3;                --  toggle clock
-             clk_ctr_3 <= X"0000000";                    --  reset counter
-          else                                            -- else
-               clk_ctr_3 <= clk_ctr_3 + X"0000001";    --  counter = counter + 1
+          if clk_ctr_3 = clk_limit_3 then              
+               temp_clk_3 <= not temp_clk_3;           
+             clk_ctr_3 <= X"0000000";                  
+          else                                         
+               clk_ctr_3 <= clk_ctr_3 + X"0000001";    
           end if;
           
         end if;
