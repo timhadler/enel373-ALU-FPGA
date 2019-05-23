@@ -28,6 +28,7 @@ end ALU;
 
 architecture Behavioral of ALU is
 
+-- assigns arithimitic/logic operations to op_code
 constant ADD : std_logic_vector := "0001";
 constant SUB : std_logic_vector := "0010";
 constant log_AND : std_logic_vector := "0100";
