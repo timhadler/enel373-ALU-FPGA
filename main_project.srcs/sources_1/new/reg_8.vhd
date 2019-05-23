@@ -3,7 +3,7 @@
 -- 
 -- 
 -- Create Date: 10.04.2019 11:09:58
--- Module Name: reg_4_en - Behavioral
+-- Module Name: reg_8_en - Behavioral
 -- Project Name: ALU Design Project
 -- Target Devices: Nexys 4 DDR
 -- Tool Versions: Xilinx Vivado
