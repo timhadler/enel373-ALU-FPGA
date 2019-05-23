@@ -3,11 +3,11 @@
 -- 
 -- 
 -- Create Date: 10.04.2019 11:09:58
--- Module Name: ALU - Behavioral
+-- Module Name: Button_Debounce - Behavioural
 -- Project Name: ALU Design Project
 -- Target Devices: Nexys 4 DDR
 -- Tool Versions: Xilinx Vivado
--- Description: Is the button debounce module for the project
+-- Description: Debounces the input button via polling
 -- 
 -- 
 ----------------------------------------------------------------------------------
