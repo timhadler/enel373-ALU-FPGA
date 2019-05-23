@@ -1,20 +1,15 @@
 ----------------------------------------------------------------------------------
--- Tertiary Institution: University of Canterbury
--- Engineers: Tim Hadler, Ben Busch and Joe Green
+-- Author: Tim Hadler, Joe Green
 -- 
--- Create Date: 12.03.2019 16:24:51
--- Design Name: CPU "like" realization 
--- Module Name: 
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
 -- 
--- Dependencies: 
+-- Create Date: 10.04.2019 11:09:58
+-- Module Name: Structural main project module
+-- Project Name: ALU Design Project
+-- Target Devices: Nexys 4 DDR
+-- Tool Versions: Xilinx Vivado
+-- Description: Is the main project moduel, maps inputs and outputs through
+-- behavioural modules and input output components
 -- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
 -- 
 ----------------------------------------------------------------------------------
 library IEEE;
@@ -22,14 +17,7 @@ library load_data;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
---shift register to determine what register to store inputs into or determine op-code
+
 
 entity main is
 port(
@@ -54,10 +42,6 @@ signal R0_EN, R1_EN, Operator_EN, Operand_EN, RG_EN, SW_EN : STD_LOGIC;
 signal R0_out, R1_out, RG_out, clr_all, Button : STD_LOGIC;
 signal operator : std_logic_vector (3 downto 0);
 
-component BCD_to_7SEG port(
-     bcd_in: in std_logic_vector (3 downto 0);
-     leds_out: out std_logic_vector (1 to 7));
-end component;
 
 component tristate_8_buf port(
     Input : in std_logic_vector (7 downto 0);
