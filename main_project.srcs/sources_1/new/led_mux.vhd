@@ -9,7 +9,7 @@
 -- Tool Versions: Xilinx Vivado
 -- Description: This module decides what values stored in registers
 -- is displayed using the LEDs, based on current state
--- 
+-- The left most leds are used to display what state the ALU is currently in
 -- 
 ----------------------------------------------------------------------------------
 
@@ -44,7 +44,7 @@ process (state)
         when others => led_tmp(7 downto 0) <= "00000000";
     end case;
 
-led_tmp(15 downto 13) <= state;
+led_tmp(15 downto 13) <= state;  -- Display current state on the left most leds
 led_out <= led_tmp;
 
 end process;
