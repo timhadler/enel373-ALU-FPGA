@@ -8,7 +8,7 @@
 -- Target Devices: Nexys 4 DDR
 -- Tool Versions: Xilinx Vivado
 -- Description: This is the state machine module for the ALU.
--- It uses a debounced button signal and 20Mhz clock signal
+-- It uses a debounced button signal and 100hz clock signal
 -- to iterate through states. 
 ----------------------------------------------------------------------------------
 
