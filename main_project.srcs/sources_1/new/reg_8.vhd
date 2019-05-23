@@ -1,20 +1,14 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Author: Joe Green
 -- 
--- Create Date: 15.03.2019 12:45:10
--- Design Name: 
--- Module Name: reg_8 - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
 -- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
+-- Create Date: 10.04.2019 11:09:58
+-- Module Name: reg_4_en - Behavioral
+-- Project Name: ALU Design Project
+-- Target Devices: Nexys 4 DDR
+-- Tool Versions: Xilinx Vivado
+-- Description: This is a 8-bit register with enable and asynchronous
+-- clear inputs
 -- 
 ----------------------------------------------------------------------------------
 
