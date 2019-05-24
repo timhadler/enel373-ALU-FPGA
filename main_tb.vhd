@@ -1,22 +1,17 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Author: Joe Green
 -- 
--- Create Date: 20.05.2019 15:36:38
--- Design Name: 
+-- 
+-- Create Date: 10.04.2019 11:09:58
 -- Module Name: main_tb - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
+-- Project Name: ALU Design Project
+-- Target Devices: Nexys 4 DDR
+-- Tool Versions: Xilinx Vivado
+-- Description: This is a test bench module that tests the button debounce 
+-- module. 
 -- 
 ----------------------------------------------------------------------------------
+
 
 
 library IEEE;
