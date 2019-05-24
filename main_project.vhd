@@ -34,7 +34,6 @@ architecture Behav of main is
 signal clk_5hz, clk_100hz, concurr_clk : std_logic;
 signal databus : std_logic_vector (7 downto 0);
 signal regA, regB, regG, operand : std_logic_vector (7 downto 0);
-signal bcd : std_logic_vector (7 downto 0);
 signal curr_state : std_logic_vector (2 downto 0);
 signal ALU_Out : std_logic_vector (7 downto 0);
 
